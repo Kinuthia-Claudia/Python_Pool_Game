@@ -126,3 +126,106 @@ def create_cushion(poly_dims):
 
 for c in cushions:
     create_cushion(c)
+
+# Game loop
+run = True
+while run:
+    clock.tick(FPS)
+    space.step(1 / FPS)
+
+    # Pool table
+    screen.fill(BG)
+    border_width = 28
+    table_x = 50
+    table_y = 50
+    table_width = SCREEN_WIDTH - 100
+    table_height = SCREEN_HEIGHT - 100
+    pygame.draw.rect(screen, BROWN, (table_x - border_width, table_y - border_width,
+                                     table_width + 2 * border_width,
+                                     table_height + 2 * border_width))
+
+    pygame.draw.rect(screen, GREEN, (50, 50, SCREEN_WIDTH - 100, SCREEN_HEIGHT - 100))
+    for pocket in pockets:
+        pygame.draw.circle(screen, BLACK, pocket, pocket_dia // 2)
+
+
+    # Check for potted balls
+    for i, ball in enumerate(balls):
+        for pocket in pockets:
+            ball_x_dist = abs(ball.body.position[0] - pocket[0])
+            ball_y_dist = abs(ball.body.position[1] - pocket[1])
+            ball_dist = math.sqrt((ball_x_dist * 2) + (ball_y_dist * 2))
+            if ball_dist <= pocket_dia / 2 + ball.radius / 2:
+                if i == len(balls) - 1:
+                    lives -= 1
+                    cue_ball_potted = True
+                    ball.body.position = (-100, -100)
+                    ball.body.velocity = (0.0, 0.0)
+                else:
+                    space.remove(ball.body)  # Remove the ball's body from the physics space
+                    balls.remove(ball)
+                    potted_balls.append(ball)
+                    if ball.number == '8':  # Check if the 8 ball has been potted
+                        eight_ball_potted = True
+
+    # Draw balls
+    for i, ball in enumerate(balls):
+        color = ball.color if i < len(balls) - 1 else WHITE
+        pygame.draw.circle(screen, color, (int(ball.body.position[0]), int(ball.body.position[1])),
+                           int(ball.radius))
+        number_surface = ball_font.render(ball.number, True, BLACK if color != BLACK else WHITE)
+        number_rect = number_surface.get_rect(center=(int(ball.body.position[0]), int(ball.body.position[1])))
+        screen.blit(number_surface, number_rect)
+
+    # Check ball movement and handle timing
+    all_stopped = True
+    for ball in balls:
+        if abs(ball.body.velocity[0]) > 0.1 or abs(ball.body.velocity[1]) > 0.1:
+            all_stopped = False
+            break
+
+    if shot_start_time is not None:
+        elapsed_time = time.time() - shot_start_time
+        if elapsed_time < stop_time:
+            deceleration_factor = 1 - (elapsed_time / stop_time)
+            for ball in balls:
+                ball.body.velocity = (
+                    ball.body.velocity[0] * deceleration_factor,
+                    ball.body.velocity[1] * deceleration_factor
+                )
+        else:
+            for ball in balls:
+                ball.body.velocity = (0, 0)
+            shot_start_time = None
+
+    if all_stopped:
+        taking_shot = True
+        shot_start_time = None
+
+    # Handle cue ball and shooting
+    if taking_shot and game_running:
+        if cue_ball_potted:
+            cue_ball_start_position = (888, SCREEN_HEIGHT / 2)
+            balls[-1].body.position = cue_ball_start_position
+            balls[-1].body.velocity = (0, 0)  # Reset velocity when repositioning
+            cue_ball_potted = False
+
+        mouse_pos = pygame.mouse.get_pos()
+        cue_position = balls[-1].body.position
+        # Calculate angle from cue ball to mouse
+        x_dist = mouse_pos[0] - cue_position[0]
+        y_dist = mouse_pos[1] - cue_position[1]
+        cue_angle = math.atan2(y_dist, x_dist)
+
+        # Draw cue stick
+        cue_length = 100
+        cue_end_x = cue_position[0] - cue_length * math.cos(cue_angle)  # Note the minus sign
+        cue_end_y = cue_position[1] - cue_length * math.sin(cue_angle)  # Note the minus sign
+        pygame.draw.line(screen, BROWN, cue_position, (cue_end_x, cue_end_y), 5)
+
+        if powering_up:
+            force += 100 * force_direction
+            if force >= max_force or force <= 0:
+                force_direction *= -1
+            for b in range(math.ceil(force / 2000)):
+                pygame.draw.rect(screen, RED, (cue_position[0] - 30 + (b * 15), cue_position[1] + 30, 10, 20))
