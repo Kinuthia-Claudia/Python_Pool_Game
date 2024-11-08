@@ -40,6 +40,12 @@ Game Rules
     If you pot the 8-ball before all other balls, you lose the game.
     If you run out of lives, the game ends.
     Potting all other balls and then the 8-ball last earns you a win!
+    
+![GAMEOVER](https://github.com/user-attachments/assets/86abe200-4fcb-4063-8f64-8351ea59ffa5)
+
+![YOU LOSE](https://github.com/user-attachments/assets/136d5574-7d92-4d68-b961-90d7291e2c2b)
+
+![YOU WIN](https://github.com/user-attachments/assets/150ac50a-44e3-452d-ab29-0aaf8846dd9c)
 
 Controls
 
