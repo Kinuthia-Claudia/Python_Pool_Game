@@ -1,6 +1,6 @@
-# 2D POOL GAME
+# POOL GAME
 
-This is a simple single player pool game created using Python, Pygame, and Pymunk. It simulates a pool table where players can shoot balls into pockets. The game includes basic physics for realistic ball movement and collisions.
+This is a simple 2D single-player pool game created using Python. It simulates a pool table where players can shoot pool balls into pockets according to the game rules in order to win the game.
 
 ## Features
 
