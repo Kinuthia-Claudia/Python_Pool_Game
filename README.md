@@ -10,9 +10,7 @@ Attractive graphics with colorful pool balls and a green table.
 
 Simple controls for aiming and shooting.
 
-## Getting Started
-
-Prerequisites
+## Prerequisites
 
 Download the Project folder from the repository.
 
