@@ -15,9 +15,9 @@ To run this project, you need:
 
     Python 3.x: Download from python.org
     
-    Pygame: Install it via pip by running: pip install pygame
+    Pygame: Install it via pip by running: pip install pygame.
 
-    Pymunk: Install it via pip by running: pip install pymunk
+    Pymunk: Install it via pip by running: pip install pymunk.
 
 Running the Game
 
