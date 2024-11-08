@@ -34,7 +34,7 @@ cue_ball_potted = False
 taking_shot = True
 powering_up = False
 potted_balls = []
-stop_time = 120
+stop_time = 60
 shot_start_time = None
 taking_shot = True
 eight_ball_potted = False
@@ -46,8 +46,8 @@ BROWN = (139, 69, 19)
 RED = (255, 0, 0)
 
 # Fonts
-font = pygame.font.SysFont("Nunito", 40)
-large_font = pygame.font.SysFont("Nunito", 60)
+font = pygame.font.SysFont("Nunito", 50)
+large_font = pygame.font.SysFont("Nunito", 100)
 ball_font = pygame.font.SysFont("Nunito", 30)
 
 # Outputting text onto the screen
@@ -83,14 +83,14 @@ positions = [
 # Creating balls
 def create_ball(radius, pos, color, number):
     body = pymunk.Body()
-    body.damping = 0.95
+    body.damping = 0.8
     body.position = pos
     shape = pymunk.Circle(body, radius)
     shape.mass = 5
     shape.elasticity = 0.1
     shape.color = color
     shape.number = number
-    shape.friction = 10
+    shape.friction = 0.5
     space.add(body, shape)
     return shape
 
@@ -162,10 +162,10 @@ while run:
                     ball.body.position = (-100, -100)
                     ball.body.velocity = (0.0, 0.0)
                 else:
-                    space.remove(ball.body)  # Remove the ball's body from the physics space
+                    space.remove(ball.body)
                     balls.remove(ball)
                     potted_balls.append(ball)
-                    if ball.number == '8':  # Check if the 8 ball has been potted
+                    if ball.number == '8':
                         eight_ball_potted = True
 
     # Draw balls
@@ -230,24 +230,24 @@ while run:
             for b in range(math.ceil(force / 2000)):
                 pygame.draw.rect(screen, RED, (cue_position[0] - 30 + (b * 15), cue_position[1] + 30, 10, 20))
 
-# Draw bottom panel
+    # Draw bottom panel
     pygame.draw.rect(screen, BG, (0, SCREEN_HEIGHT, SCREEN_WIDTH, BOTTOM_PANEL))
     draw_text("LIVES: " + str(lives), font, WHITE, SCREEN_WIDTH - 200, SCREEN_HEIGHT + 10)
 
- # Game over conditions
+    # Game over conditions
     if eight_ball_potted:
         draw_text("YOU LOSE!8-Ball", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
         game_running = False
 
     if lives <= 0:
-        draw_text("NO LIVES LEFT", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
+        draw_text("GAME OVER!", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
         game_running = False
 
     if len(balls) == 1:
         draw_text("YOU WIN!", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
         game_running = False
 
-# Event handling
+    # Event handling
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN and taking_shot:
             powering_up = True
@@ -268,4 +268,3 @@ while run:
     pygame.display.update()
 
 pygame.quit()
-
