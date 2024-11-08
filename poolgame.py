@@ -229,3 +229,43 @@ while run:
                 force_direction *= -1
             for b in range(math.ceil(force / 2000)):
                 pygame.draw.rect(screen, RED, (cue_position[0] - 30 + (b * 15), cue_position[1] + 30, 10, 20))
+
+# Draw bottom panel
+    pygame.draw.rect(screen, BG, (0, SCREEN_HEIGHT, SCREEN_WIDTH, BOTTOM_PANEL))
+    draw_text("LIVES: " + str(lives), font, WHITE, SCREEN_WIDTH - 200, SCREEN_HEIGHT + 10)
+
+ # Game over conditions
+    if eight_ball_potted:
+        draw_text("YOU LOSE!8-Ball", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
+        game_running = False
+
+    if lives <= 0:
+        draw_text("NO LIVES LEFT", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
+        game_running = False
+
+    if len(balls) == 1:
+        draw_text("YOU WIN!", large_font, WHITE, SCREEN_WIDTH / 2 - 160, SCREEN_HEIGHT / 2 - 100)
+        game_running = False
+
+# Event handling
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN and taking_shot:
+            powering_up = True
+        if event.type == pygame.MOUSEBUTTONUP and taking_shot:
+            powering_up = False
+            if force > 0:
+                shot_start_time = time.time()
+                taking_shot = False
+                # Apply force in the correct direction
+                x_impulse = math.cos(cue_angle - balls[-1].body.angle)
+                y_impulse = math.sin(cue_angle - balls[-1].body.angle)
+                balls[-1].body.apply_impulse_at_local_point((force * x_impulse, force * y_impulse), (0, 0))
+                force = 0
+                force_direction = 1
+        if event.type == pygame.QUIT:
+            run = False
+
+    pygame.display.update()
+
+pygame.quit()
+
