@@ -13,15 +13,16 @@ Simple controls for aiming and shooting.
 ## Getting Started
 
 Prerequisites
+
 Download the Project folder from the repository.
 
 Download python (3.x.x) from python.org
 
-Install the required packages for this project by the following command:  
+Install the required packages for this project with the following command:  
 
         pip install -r requirements.txt
     
-Running the Game
+## Running the Game
 
 Open your terminal and change to the directory where the project files are located.
 
@@ -33,30 +34,33 @@ Run the Game: Use the following command to start the game:
 
 When you run the game, a pool table will appear on your screen with the cue ball in position and the rest of the balls 
 arranged.
+
 Move your mouse to the direction you want the cue ball to target.
+
 Shooting controls:
     Point to the targeted direction with your mouse, click and hold the left mouse button to power up your shot.
     Release the mouse button to release the cue ball.
         
 Objective: Try to pot all the balls and then the 8-ball last before losing all your lives. 
 
-
-Game Rules
+GAME RULES
 
 You start with 3 lives.
+
 If you pot the 8-ball before all other balls, you lose the game.
-If you run out of lives, the game also ends.
-Potting all other balls and then the 8-ball last earns you a win!
-    
-![GAMEOVER](https://github.com/user-attachments/assets/86abe200-4fcb-4063-8f64-8351ea59ffa5)
 
 ![YOU LOSE](https://github.com/user-attachments/assets/136d5574-7d92-4d68-b961-90d7291e2c2b)
+
+If you run out of lives by potting the cue ball more than thrice, the game also ends.
+
+![GAMEOVER](https://github.com/user-attachments/assets/86abe200-4fcb-4063-8f64-8351ea59ffa5)
+
+Potting all other balls and then the 8-ball last earns you a win!
 
 ![YOU WIN](https://github.com/user-attachments/assets/150ac50a-44e3-452d-ab29-0aaf8846dd9c)
 
 
-Acknowledgments
-We’d like to extend my thanks to the following resources that  supported this project:
+## Acknowledgments
 
 Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of 
      creating this game much more approachable.   
