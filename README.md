@@ -2,54 +2,48 @@
 
 This is a simple single player pool game created using Python, Pygame, and Pymunk. It simulates a pool table where players can shoot balls into pockets. The game includes basic physics for realistic ball movement and collisions.
 
-Features
+## Features
 
-    Realistic ball physics, including collisions and pockets.
-    Attractive graphics with colorful pool balls and a green table.
-    Simple controls for aiming and shooting.
+Realistic ball physics, including collisions and pockets.
+Attractive graphics with colorful pool balls and a green table.
+Simple controls for aiming and shooting.
 
-Getting Started
+## Getting Started
 
 Prerequisites
-To run this project, you need:
 
-    Python 3.x: Download from python.org
-    
-    Set up a virtual environment 
+Python 3.x: Download from python.org
+Set up a virtual environment 
+Install the required packages for this project by the following command:  
 
-    To install the required packages for this project, run the following command:
-
-          ```bash
         pip install -r requirements.txt
     
 Running the Game
 
-    Download the Project: You can download the project files from the repository.
-    Navigate to the Project Directory: Open your terminal and change to the directory where the project files are located.
-    Run the Game: Use the following command to start the game:
+Download the Project: You can download the project files from the repository.
+Navigate to the Project Directory: Open your terminal and change to the directory where the project files are located.
+Run the Game: Use the following command to start the game:
     
-    python poolgame.py
+       python poolgame.py
 
-How to Play
+## How to Play
 
-    When you run the game, a pool table will appear on your screen with the cue ball in position and the rest of the balls 
-    arranged.
-    Move your mouse to the cue ball to target ball.
-    Shooting controls:
-        Point to the targeted direction with your mouse, click and hold the left mouse button to power up your shot.
-        Release the mouse button to shoot the cue ball in the direction you're targeting.
-    Objective: Try to pot all the balls and then the 8-ball last before losing all your lives. 
-    
-Controls 
+When you run the game, a pool table will appear on your screen with the cue ball in position and the rest of the balls 
+arranged.
+Move your mouse to the direction you want the cue ball to target.
+Shooting controls:
+    Point to the targeted direction with your mouse, click and hold the left mouse button to power up your shot.
+    Release the mouse button to release the cue ball.
+        
+Objective: Try to pot all the balls and then the 8-ball last before losing all your lives. 
 
-    Left Mouse Button: Click and hold to charge your shot, then release to shoot.
 
 Game Rules
 
-    You start with 3 lives.
-    If you pot the 8-ball before all other balls, you lose the game.
-    If you run out of lives, the game also ends.
-    Potting all other balls and then the 8-ball last earns you a win!
+You start with 3 lives.
+If you pot the 8-ball before all other balls, you lose the game.
+If you run out of lives, the game also ends.
+Potting all other balls and then the 8-ball last earns you a win!
     
 ![GAMEOVER](https://github.com/user-attachments/assets/86abe200-4fcb-4063-8f64-8351ea59ffa5)
 
@@ -61,10 +55,10 @@ Game Rules
 Acknowledgments
 We’d like to extend my thanks to the following resources that  supported this project:
 
-     Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of 
+Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of 
      creating this game much more approachable.   
 
-     Pygame Community – For the resources, tutorials, and support available online.
+Pygame Community – For the resources, tutorials, and support available online.
      
 
 Enjoy playing this fun pool game! Feel free to modify the code and add your own features!
