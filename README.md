@@ -15,15 +15,23 @@ To run this project, you need:
 
     Python 3.x: Download from python.org
     
-    Pygame: Install it via pip by running: pip install pygame.
+    Set up a virtual environment    
+    
+    Pygame: Install it via pip by running: 
+    
+    pip install pygame.
 
-    Pymunk: Install it via pip by running: pip install pymunk.
+    Pymunk: Install it via pip by running:
+    
+    pip install pymunk.
 
 Running the Game
 
     Download the Project: You can download the project files from the repository.
     Navigate to the Project Directory: Open your terminal and change to the directory where the project files are located.
-    Run the Game: Use the following command to start the game: python pool_game.py
+    Run the Game: Use the following command to start the game:
+    
+    python poolgame.py
 
 How to Play
 
@@ -48,14 +56,18 @@ Game Rules
 ![YOU WIN](https://github.com/user-attachments/assets/150ac50a-44e3-452d-ab29-0aaf8846dd9c)
 
 
-Controls
-Left Mouse Button: Click and hold to charge your shot, then release to shoot.
+Controls 
+
+    Left Mouse Button: Click and hold to charge your shot, then release to shoot.
 
 Acknowledgments
 We’d like to extend my thanks to the following resources that  supported this project:
-Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of creating this game much more approachable.   
 
-Pygame Community – For the wealth of resources, tutorials, and support available online, which were invaluable during development.
+     Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of 
+     creating this game much more approachable.   
+
+     Pygame Community – For the resources, tutorials, and support available online, which were invaluable 
+     during development.
   
 Conclusion
 
