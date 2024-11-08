@@ -61,7 +61,7 @@ Potting all other balls and then the 8-ball last earns you a win!
 ## Acknowledgments
 
 Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of 
-     creating this game much more approachable.   
+     creating this game much more approachable(https://www.youtube.com/watch?v=txcOqDhrwBo&t=22s)   
 
 Pygame Community – For the resources, tutorials, and support available online.
      
