@@ -47,6 +47,8 @@ Game Rules
 
 ![YOU WIN](https://github.com/user-attachments/assets/150ac50a-44e3-452d-ab29-0aaf8846dd9c)
 
+Acknowledgments
+
 Controls
 
     Left Mouse Button: Click and hold to charge your shot, then release to shoot.
