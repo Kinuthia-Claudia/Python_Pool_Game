@@ -19,7 +19,7 @@ To run this project, you need:
 
     Pymunk: Install it via pip by running: pip install pymunk.
 
-Running the Game.
+Running the Game
 
     Download the Project: You can download the project files from the repository.
     Navigate to the Project Directory: Open your terminal and change to the directory where the project files are located.
