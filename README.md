@@ -5,23 +5,26 @@ This is a simple 2D single-player pool game created using Python. It simulates a
 ## Features
 
 Realistic ball physics, including collisions and pockets.
+
 Attractive graphics with colorful pool balls and a green table.
+
 Simple controls for aiming and shooting.
 
 ## Getting Started
 
 Prerequisites
+Download the Project folder from the repository.
 
-Python 3.x: Download from python.org
-Set up a virtual environment 
+Download python (3.x.x) from python.org
+
 Install the required packages for this project by the following command:  
 
         pip install -r requirements.txt
     
 Running the Game
 
-Download the Project: You can download the project files from the repository.
-Navigate to the Project Directory: Open your terminal and change to the directory where the project files are located.
+Open your terminal and change to the directory where the project files are located.
+
 Run the Game: Use the following command to start the game:
     
        python poolgame.py
