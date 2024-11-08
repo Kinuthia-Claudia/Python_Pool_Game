@@ -49,11 +49,13 @@ Game Rules
 
 
 Controls
+Left Mouse Button: Click and hold to charge your shot, then release to shoot.
 
 Acknowledgments
+We’d like to extend my thanks to the following resources that  supported this project:
+Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of creating this game much more approachable.   
 
-    Left Mouse Button: Click and hold to charge your shot, then release to shoot.
-   
+  
 
 Conclusion
 
