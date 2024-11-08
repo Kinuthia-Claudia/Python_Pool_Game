@@ -15,16 +15,13 @@ To run this project, you need:
 
     Python 3.x: Download from python.org
     
-    Set up a virtual environment    
-    
-    Pygame: Install it via pip by running: 
-    
-    pip install pygame.
+    Set up a virtual environment 
 
-    Pymunk: Install it via pip by running:
-    
-    pip install pymunk.
+    To install the required packages for this project, run the following command:
 
+          ```bash
+        pip install -r requirements.txt
+    
 Running the Game
 
     Download the Project: You can download the project files from the repository.
