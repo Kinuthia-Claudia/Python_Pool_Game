@@ -55,8 +55,8 @@ Acknowledgments
 We’d like to extend my thanks to the following resources that  supported this project:
 Coding With Russ(Youtube) – For providing helpful tutorials and guidance on Pygame and PyMunk, making the process of creating this game much more approachable.   
 
+Pygame Community – For the wealth of resources, tutorials, and support available online, which were invaluable during development.
   
-
 Conclusion
 
 Enjoy playing this fun pool game! Feel free to modify the code and add your own features!
