@@ -21,7 +21,7 @@ draw_options = pymunk.pygame_util.DrawOptions(screen)
 
 # Variables
 clock = pygame.time.Clock()
-FPS = 120
+FPS = 240
 lives = 3
 dia = 36
 pocket_dia = 66
